@@ -1,11 +1,13 @@
 import mysql.connector
 
-# Database connection details (replace with your own)
-mydb = mysql.connector.connect(
+try:
+    mydb = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
     password="Password"
 )
+except mysql.connector.Error: 
+    print("Failed to connect to the database")
 
 mycursor = mydb.cursor()
 
